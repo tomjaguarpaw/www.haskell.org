@@ -33,3 +33,7 @@ the site served with `site watch`.
 ### Building
 
 To obtain the static `haskell-org-site` simply run `nix-build -A built` and the generated `result` link will contain the static site contents.
+
+### Deploying
+
+The site will automatically be deployed live to <http://www.haskell.org/> every time a branch is merged to `master`. Alternatively an admin for this GitHub repository can deploy the site by visiting the [Deploy workflow page](https://github.com/haskell-infra/www.haskell.org/actions/workflows/deploy.yml), clicking the "Run workflow" dropdown, choosing the branch to build and deploy, and clicking the "Run workflow" button.
