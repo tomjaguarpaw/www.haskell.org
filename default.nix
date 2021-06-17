@@ -77,4 +77,4 @@ let
   };
 in
   if pkgs.lib.inNixShell then builder
-  else { inherit builder built; inherit (pkgs) linkchecker; }
+  else { inherit builder built; inherit (pkgs) linkchecker lftp; }

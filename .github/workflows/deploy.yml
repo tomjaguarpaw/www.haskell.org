@@ -19,10 +19,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      # Should probably do this with Nix
-      - name: Install lftp
-        run: sudo apt-get install lftp
-
       - name: Install Nix
         uses: cachix/install-nix-action@v12
 
@@ -52,4 +48,4 @@ jobs:
           #   Value: The text of the ssh private key
           WWW_HASKELL_ORG_SSH_KEY: ${{ secrets.WWW_HASKELL_ORG_SSH_KEY }}
         run: |
-          sh ./deploy.sh
+          nix run --quiet -f . lftp -c sh ./deploy.sh
